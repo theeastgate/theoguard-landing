@@ -63,7 +63,7 @@ export function EmailCapture() {
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
             <p className="text-xs font-medium text-amber-400 uppercase tracking-widest mb-3">
-              Ministry discernment newsletter
+              Discernment newsletter
             </p>
             <h2
               id="subscribe-heading"
@@ -72,7 +72,7 @@ export function EmailCapture() {
               Stay ahead of theological drift.
             </h2>
             <p className="text-stone-400 leading-relaxed mb-10 max-w-[48ch] mx-auto">
-              Join 600+ pastors receiving our monthly newsletter on doctrinal discernment,
+              Join pastors and believers receiving our monthly newsletter on doctrinal discernment,
               ministry resources, and TheoGuard feature updates. No marketing. Unsubscribe anytime.
             </p>
 

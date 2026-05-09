@@ -20,22 +20,24 @@ const SITE_URL = 'https://theoguard.com';
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: 'TheoGuard — AI Theological Analysis for Pastors',
+    default: 'TheoGuard — AI Theological Discernment Tool',
     template: '%s | TheoGuard',
   },
   description:
-    'Protect your congregation from false doctrine. Upload sermons, books, or YouTube links and receive a detailed theological soundness report — powered by AI, grounded in orthodoxy.',
+    'Upload a sermon, book, or YouTube video and receive a detailed theological soundness report — powered by AI, grounded in orthodoxy. Know what you\'re really consuming.',
   keywords: [
     'theological analysis',
     'doctrinal soundness',
+    'theological discernment',
+    'sermon analysis',
+    'false doctrine detection',
     'pastor tools',
     'church resources',
     'theological review',
-    'sermon analysis',
-    'false doctrine detection',
     'ministry tools',
     'reformed theology',
-    'doctrinal discernment',
+    'Christian discernment',
+    'doctrinal review',
   ],
   authors: [{ name: 'TheoGuard' }],
   creator: 'TheoGuard',
@@ -44,9 +46,9 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: SITE_URL,
     siteName: 'TheoGuard',
-    title: 'TheoGuard — AI Theological Analysis for Pastors',
+    title: 'TheoGuard — AI Theological Discernment Tool',
     description:
-      'Guard your congregation from false doctrine. Upload any content and receive an expert theological analysis in minutes.',
+      'Upload a sermon, book, or YouTube video and receive a detailed theological soundness report. Know what you\'re really consuming.',
     images: [
       {
         url: '/og-image.png',
@@ -58,9 +60,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'TheoGuard — AI Theological Analysis for Pastors',
+    title: 'TheoGuard — AI Theological Discernment Tool',
     description:
-      'Guard your congregation from false doctrine. Upload any content and receive an expert theological analysis in minutes.',
+      'Upload a sermon, book, or YouTube video and receive a detailed theological soundness report. Know what you\'re really consuming.',
     images: ['/og-image.png'],
   },
   robots: {
@@ -94,7 +96,7 @@ export default function RootLayout({
               '@type': 'SoftwareApplication',
               name: 'TheoGuard',
               description:
-                'AI-powered theological content analysis tool for pastors and church leaders.',
+                'AI-powered theological discernment tool for anyone who wants to know what they\'re really consuming.',
               applicationCategory: 'BusinessApplication',
               operatingSystem: 'Web',
               url: SITE_URL,

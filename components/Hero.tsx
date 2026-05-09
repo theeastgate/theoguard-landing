@@ -49,7 +49,7 @@ export function Hero() {
             <motion.div variants={itemVariants} className="mb-6">
               <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-100 border border-amber-200 text-amber-800 text-xs font-medium">
                 <ShieldCheck weight="fill" className="w-3.5 h-3.5" />
-                Trusted by 400+ pastors and church leaders
+                Trusted by pastors worldwide
               </span>
             </motion.div>
 
@@ -58,18 +58,18 @@ export function Hero() {
               id="hero-heading"
               className="font-display text-5xl lg:text-6xl font-bold text-stone-900 leading-[1.1] tracking-tight mb-6"
             >
-              Guard your{' '}
-              <span className="text-amber-700">congregation</span>{' '}
-              from false doctrine.
+              Know what you&apos;re{' '}
+              <span className="text-amber-700">really</span>{' '}
+              consuming.
             </motion.h1>
 
             <motion.p
               variants={itemVariants}
               className="text-lg text-stone-600 leading-relaxed mb-8 max-w-[52ch]"
             >
-              Upload a sermon PDF, book, or YouTube link. Receive a detailed theological
+              Upload a sermon, book, or YouTube video. Receive a detailed theological
               analysis identifying doctrinal issues, psychological frameworks, and
-              hermeneutical problems — before they reach your congregation.
+              hermeneutical problems — so you can discern what you read, hear, and watch.
             </motion.p>
 
             <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-3 mb-10">

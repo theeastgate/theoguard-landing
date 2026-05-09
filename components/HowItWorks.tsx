@@ -26,7 +26,7 @@ const steps = [
     icon: FileText,
     title: 'Receive your report',
     description:
-      'Get a structured doctrinal soundness report with severity-rated alerts, specific evidence from the text, biblical counterpoints, and actionable pastoral recommendations.',
+      'Get a structured doctrinal soundness report with severity-rated alerts, specific evidence from the text, biblical counterpoints, and clear recommendations for what to do next.',
     detail: 'Saved to your account, searchable, exportable',
   },
 ];

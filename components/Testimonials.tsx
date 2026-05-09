@@ -73,37 +73,24 @@ export function Testimonials() {
             id="testimonials-heading"
             className="font-display text-4xl lg:text-5xl font-bold text-stone-900 tracking-tight"
           >
-            Pastors who caught what slipped through.
+            What people are saying.
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {testimonials.map((t, i) => (
-            <motion.article
-              key={t.name}
-              initial={{ opacity: 0, y: 20 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{
-                duration: 0.5,
-                delay: i * 0.08,
-                ease: [0.16, 1, 0.3, 1],
-              }}
-              className={`p-6 rounded-xl border border-stone-200 flex flex-col ${
-                i === 1 || i === 4 ? 'md:mt-6' : ''
-              }`}
-            >
-              <Quotes weight="fill" className="w-6 h-6 text-amber-300 mb-4 flex-shrink-0" />
-              <blockquote className="text-stone-700 leading-relaxed text-[15px] flex-1 mb-5">
-                &ldquo;{t.quote}&rdquo;
-              </blockquote>
-              <footer className="border-t border-stone-100 pt-4">
-                <p className="font-semibold text-stone-900 text-sm">{t.name}</p>
-                <p className="text-xs text-stone-500 mt-0.5">{t.title}</p>
-                <p className="text-xs text-stone-400">{t.church}</p>
-              </footer>
-            </motion.article>
-          ))}
-        </div>
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+          className="flex flex-col items-center justify-center py-20 border border-dashed border-stone-300 rounded-2xl bg-stone-50"
+        >
+          <Quotes weight="fill" className="w-10 h-10 text-amber-200 mb-4" />
+          <p className="font-display text-2xl font-bold text-stone-400 tracking-tight mb-2">
+            Coming soon
+          </p>
+          <p className="text-sm text-stone-400 max-w-[38ch] text-center leading-relaxed">
+            Testimonials from pastors and church leaders are on their way.
+          </p>
+        </motion.div>
       </div>
     </section>
   );

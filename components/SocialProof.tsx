@@ -1,16 +1,16 @@
 'use client';
 
 const denominations = [
-  'Reformed Baptist',
-  'Presbyterian Church in America',
-  'Southern Baptist Convention',
-  'Anglican Church in North America',
-  'Reformed Church of America',
-  'Evangelical Free Church',
-  'Acts 29 Network',
-  'Reformed Presbyterian Church',
-  'Conservative Congregational',
-  'Associate Reformed Presbyterian',
+  'Calvary Chapel Association',
+  'Baptist Churches',
+  'Reformed Traditions',
+  'Non-Denominational Churches',
+  'Evangelical Christian Churches',
+  'Calvary Chapel Association',
+  'Baptist Churches',
+  'Reformed Traditions',
+  'Non-Denominational Churches',
+  'Evangelical Christian Churches',
 ];
 
 export function SocialProof() {
@@ -20,7 +20,7 @@ export function SocialProof() {
     <section className="py-12 border-y border-stone-200 bg-white overflow-hidden" aria-label="Trusted by">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 mb-6">
         <p className="text-xs font-medium text-stone-400 uppercase tracking-widest text-center">
-          Trusted by pastors across these traditions
+          Trusted by pastors worldwide across these traditions
         </p>
       </div>
 
