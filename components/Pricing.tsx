@@ -14,12 +14,13 @@ const plans = [
     href: 'https://app.theoguard.com',
     highlight: false,
     features: [
-      '5 theological analyses, total',
-      'All content types: PDF, YouTube, book, text',
+      '4 analyses, total',
+      'Theological Content Analysis',
+      'Worship Song Analysis',
+      'All content types: PDF, YouTube, book, text, lyrics',
       'Full doctrinal soundness reports',
       'Critical alert system',
       'Pastoral recommendations',
-      'Analysis history saved to account',
     ],
   },
   {
@@ -31,12 +32,12 @@ const plans = [
     href: 'https://app.theoguard.com',
     highlight: false,
     features: [
-      'Unlimited theological analyses',
-      'All content types: PDF, YouTube, book, text',
-      'Full doctrinal soundness reports',
+      'Unlimited analyses',
+      'Theological Content Analysis',
+      'Worship Song Analysis',
+      'Speaker & Conference Vetting',
+      'All content types',
       'Confessional alignment settings',
-      'Trend tracking across your history',
-      'CSV export for elder board review',
       'Cancel anytime',
     ],
   },
@@ -44,19 +45,19 @@ const plans = [
     name: 'Lifetime',
     price: '$179',
     period: 'one-time',
-    description: 'One payment. Every analysis, forever. Includes all future features.',
+    description: 'One payment. Every tool, forever. Includes all future features.',
     cta: 'Get lifetime access',
     href: 'https://app.theoguard.com',
     highlight: true,
     badge: 'Best value',
     features: [
-      'Unlimited theological analyses forever',
-      'All content types: PDF, YouTube, book, text',
-      'Full doctrinal soundness reports',
+      'Unlimited analyses forever',
+      'Theological Content Analysis',
+      'Worship Song Analysis',
+      'Speaker & Conference Vetting',
+      'All content types',
       'Confessional alignment settings',
-      'Trend tracking across your history',
-      'CSV export for elder board review',
-      'All future features included',
+      'All future tools included',
       'Priority support',
     ],
   },
@@ -90,8 +91,8 @@ export function Pricing() {
             Start free. Upgrade when you need it.
           </h2>
           <p className="text-stone-600 leading-relaxed">
-            Five analyses are included on every free account — enough to evaluate
-            TheoGuard on real content from your ministry.
+            Four analyses are included on every free account — enough to evaluate
+            all three tools on real content from your ministry.
           </p>
         </motion.div>
 

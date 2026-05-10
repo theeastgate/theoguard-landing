@@ -8,10 +8,10 @@ const steps = [
   {
     number: '01',
     icon: Upload,
-    title: 'Submit your content',
+    title: 'Choose your tool and submit',
     description:
-      'Upload a PDF sermon, Word document, YouTube link, or search by book title. TheoGuard accepts the formats your ministry already uses.',
-    detail: 'PDF, DOCX, TXT, YouTube URLs, book titles by author',
+      'Analyze sermons and books via PDF, DOCX, or YouTube. Evaluate worship songs by lyrics or title. Vet speakers by name, bio, or sermon link. TheoGuard accepts what you already have.',
+    detail: 'PDF, DOCX, YouTube URLs, book titles, lyrics, speaker names',
   },
   {
     number: '02',
@@ -56,7 +56,7 @@ export function HowItWorks() {
             id="how-heading"
             className="font-display text-4xl lg:text-5xl font-bold text-stone-900 tracking-tight max-w-lg"
           >
-            From upload to report in three steps.
+            Pick a tool. Submit content. Get your report.
           </h2>
         </motion.div>
 

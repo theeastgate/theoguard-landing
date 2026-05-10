@@ -67,9 +67,9 @@ export function Hero() {
               variants={itemVariants}
               className="text-lg text-stone-600 leading-relaxed mb-8 max-w-[52ch]"
             >
-              Upload a sermon, book, or YouTube video. Receive a detailed theological
-              analysis identifying doctrinal issues, psychological frameworks, and
-              hermeneutical problems — so you can discern what you read, hear, and watch.
+              Three tools in one platform: analyze sermons and books for doctrinal
+              soundness, evaluate worship songs for theological faithfulness, and
+              vet speakers before you invite them to your pulpit.
             </motion.p>
 
             <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-3 mb-10">
@@ -77,7 +77,7 @@ export function Hero() {
                 href="https://app.theoguard.com"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-amber-700 hover:bg-amber-800 text-white font-medium rounded-lg transition-all duration-150 active:scale-[0.97] text-[15px]"
               >
-                Start free — 5 analyses
+                Start free — 4 analyses
                 <ArrowRight weight="bold" className="w-4 h-4" />
               </a>
               <a
@@ -96,7 +96,7 @@ export function Hero() {
               </div>
               <div className="flex items-center gap-1.5">
                 <ShieldCheck weight="fill" className="w-4 h-4 text-green-500" />
-                <span>5 free analyses</span>
+                <span>4 free analyses</span>
               </div>
               <div className="flex items-center gap-1.5">
                 <ShieldCheck weight="fill" className="w-4 h-4 text-green-500" />

@@ -14,9 +14,25 @@ import {
   ChartBar,
   Bell,
   ArrowsOut,
+  MusicNote,
+  UserFocus,
 } from '@phosphor-icons/react';
 
 const features = [
+  {
+    icon: MusicNote,
+    title: 'Worship Song Analysis',
+    summary: 'Score any song across six theological categories before it reaches your congregation.',
+    detail:
+      'Paste lyrics, search by song title, or submit a YouTube link. TheoGuard scores each song across Biblical Faithfulness, God-centeredness, Doctrinal Clarity, Trinitarian Clarity, Gospel Substance, and Congregational Singability — then flags specific concerns with the language that triggered them. Available on the free tier.',
+  },
+  {
+    icon: UserFocus,
+    title: 'Speaker & Conference Vetting',
+    summary: 'Twelve-category theological profile before you extend a pulpit invitation.',
+    detail:
+      'Submit a speaker\'s name, bio, public statements, or a YouTube sermon link. TheoGuard builds a 12-category theological profile with epistemic confidence scoring — and explicitly notes what cannot be determined from available information, so the tool is never used to smear rather than inform. Gated to Pro tier.',
+  },
   {
     icon: Warning,
     title: 'Doctrinal Soundness Scoring',
@@ -195,8 +211,8 @@ export function Features() {
               Every layer of theological review.
             </h2>
             <p className="text-stone-600 leading-relaxed mb-8">
-              TheoGuard examines content across ten dimensions of doctrinal faithfulness.
-              Each feature is designed for the specific risks your congregation faces.
+              Three specialized tools — content analysis, worship song scoring, and speaker vetting —
+              each examining the specific risks your congregation faces.
             </p>
             <a
               href="https://app.theoguard.com"
