@@ -8,6 +8,7 @@ const links = [
   { label: 'How it works', href: '#how-it-works' },
   { label: 'Features', href: '#features' },
   { label: 'Pricing', href: '#pricing' },
+  { label: 'All tools', href: '/content-analysis' },
 ];
 
 export function Nav() {
@@ -127,7 +128,7 @@ export function Nav() {
                   href="https://app.theoguard.com"
                   className="flex items-center justify-center w-full px-4 py-3 text-sm font-medium text-white bg-amber-700 hover:bg-amber-800 rounded-lg transition-colors active:scale-[0.98]"
                 >
-                  Start free — 5 analyses included
+                  Start free — 4 analyses included
                 </a>
               </div>
             </motion.div>
