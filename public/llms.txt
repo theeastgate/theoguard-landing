@@ -1,0 +1,25 @@
+# TheoGuard
+> AI-powered theological discernment platform for pastors, church leaders, and ministry directors.
+
+## About
+TheoGuard is a multi-tool platform that helps churches guard what enters their pulpits, playlists, and platforms. It uses AI (GPT-4o) calibrated to historic Christian orthodoxy to analyze sermons, books, worship songs, and speakers — returning structured theological reports with doctrinal scores, severity-rated alerts, and actionable pastoral recommendations.
+
+## Tools
+- /: Theological Content Analysis — analyze PDF sermons, Word documents, YouTube sermons, book titles, and plain text for doctrinal soundness, psychological frameworks, worldly philosophies, hermeneutical methodology, and confessional alignment
+- /: Worship Song Analysis — score worship songs across Biblical Faithfulness, God-centeredness, Doctrinal Clarity, Trinitarian Clarity, Gospel Substance, and Congregational Singability
+- /: Speaker & Conference Vetting — build a 12-category theological profile of any speaker using their name, public statements, bio, or sermon recordings
+
+## Key Pages
+- https://theoguard.com — Landing page with full feature details and pricing
+- https://theoguard.com/privacy — Privacy Policy
+- https://theoguard.com/terms — Terms of Use
+- https://app.theoguard.com — The application (requires account)
+
+## Pricing
+- Free: $0 — 4 analyses (Theological Content Analysis + Worship Song Analysis)
+- Monthly: $9/month — unlimited analyses, all three tools including Speaker Vetting
+- Annual: $79/year — unlimited analyses, all three tools, 27% savings
+- Lifetime: $179 one-time — unlimited analyses forever, all future tools included
+
+## Contact
+hello@theoguard.com

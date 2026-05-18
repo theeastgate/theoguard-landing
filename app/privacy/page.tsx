@@ -3,9 +3,27 @@ import Link from 'next/link';
 import { ShieldCheck } from '@phosphor-icons/react/dist/ssr';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy — TheoGuard',
+  title: 'Privacy Policy',
   description:
     'How TheoGuard collects, uses, and protects your personal information and the content you submit for theological analysis.',
+  alternates: {
+    canonical: 'https://theoguard.com/privacy',
+  },
+  openGraph: {
+    title: 'Privacy Policy | TheoGuard',
+    description:
+      'How TheoGuard collects, uses, and protects your personal information and the content you submit for theological analysis.',
+    url: 'https://theoguard.com/privacy',
+    type: 'website',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'TheoGuard Privacy Policy' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Privacy Policy | TheoGuard',
+    description:
+      'How TheoGuard collects, uses, and protects your personal information and the content you submit for theological analysis.',
+    images: ['/og-image.png'],
+  },
   robots: { index: true, follow: true },
 };
 

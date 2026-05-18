@@ -3,9 +3,27 @@ import Link from 'next/link';
 import { ShieldCheck } from '@phosphor-icons/react/dist/ssr';
 
 export const metadata: Metadata = {
-  title: 'Terms of Use — TheoGuard',
+  title: 'Terms of Use',
   description:
-    'The terms and conditions governing your use of TheoGuard, the AI-powered theological content analysis service.',
+    'The terms and conditions governing your use of TheoGuard, the AI-powered theological discernment platform for pastors and church leaders.',
+  alternates: {
+    canonical: 'https://theoguard.com/terms',
+  },
+  openGraph: {
+    title: 'Terms of Use | TheoGuard',
+    description:
+      'The terms and conditions governing your use of TheoGuard, the AI-powered theological discernment platform for pastors and church leaders.',
+    url: 'https://theoguard.com/terms',
+    type: 'website',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'TheoGuard Terms of Use' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Terms of Use | TheoGuard',
+    description:
+      'The terms and conditions governing your use of TheoGuard, the AI-powered theological discernment platform for pastors and church leaders.',
+    images: ['/og-image.png'],
+  },
   robots: { index: true, follow: true },
 };
 
@@ -94,9 +112,9 @@ export default function TermsPage() {
           <ProseSection title="4. Subscription Plans and Billing">
             <h3>4.1 Free Plan</h3>
             <p>
-              New accounts receive five (5) theological analyses at no charge. These analyses do
-              not expire but are not replenished. No credit card is required to create a free
-              account.
+              New accounts receive four (4) analyses at no charge — usable across Theological
+              Content Analysis and Worship Song Analysis. These analyses do not expire but are
+              not replenished. No credit card is required to create a free account.
             </p>
 
             <h3>4.2 Paid Plans</h3>

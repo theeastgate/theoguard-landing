@@ -20,11 +20,11 @@ const SITE_URL = 'https://theoguard.com';
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: 'TheoGuard — AI Theological Discernment Tool',
+    default: 'TheoGuard — AI Theological Discernment for Pastors',
     template: '%s | TheoGuard',
   },
   description:
-    'Upload a sermon, book, or YouTube video and receive a detailed theological soundness report — powered by AI, grounded in orthodoxy. Know what you\'re really consuming.',
+    'Three AI-powered tools for pastoral discernment: analyze sermons and books for doctrinal soundness, score worship songs theologically, and vet speakers before you invite them. Grounded in historic orthodoxy.',
   keywords: [
     'theological analysis',
     'doctrinal soundness',
@@ -38,31 +38,40 @@ export const metadata: Metadata = {
     'reformed theology',
     'Christian discernment',
     'doctrinal review',
+    'worship song analysis',
+    'speaker vetting',
+    'biblical faithfulness',
+    'church leader tools',
+    'heresy detection',
+    'discernment ministry',
   ],
   authors: [{ name: 'TheoGuard' }],
   creator: 'TheoGuard',
+  alternates: {
+    canonical: SITE_URL,
+  },
   openGraph: {
     type: 'website',
     locale: 'en_US',
     url: SITE_URL,
     siteName: 'TheoGuard',
-    title: 'TheoGuard — AI Theological Discernment Tool',
+    title: 'TheoGuard — AI Theological Discernment for Pastors',
     description:
-      'Upload a sermon, book, or YouTube video and receive a detailed theological soundness report. Know what you\'re really consuming.',
+      'Analyze sermons and books for doctrinal soundness, score worship songs theologically, and vet speakers — powered by AI, grounded in orthodoxy.',
     images: [
       {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'TheoGuard — Theological Content Analysis',
+        alt: 'TheoGuard — AI Theological Discernment Tool for Pastors',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'TheoGuard — AI Theological Discernment Tool',
+    title: 'TheoGuard — AI Theological Discernment for Pastors',
     description:
-      'Upload a sermon, book, or YouTube video and receive a detailed theological soundness report. Know what you\'re really consuming.',
+      'Analyze sermons and books for doctrinal soundness, score worship songs theologically, and vet speakers — powered by AI, grounded in orthodoxy.',
     images: ['/og-image.png'],
   },
   robots: {
@@ -87,48 +96,89 @@ export default function RootLayout({
     <html lang="en" className={`${playfair.variable} ${outfit.variable}`}>
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="canonical" href={SITE_URL} />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <meta name="ai-content-declaration" content="human-created" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'SoftwareApplication',
-              name: 'TheoGuard',
-              description:
-                'AI-powered theological discernment tool for anyone who wants to know what they\'re really consuming.',
-              applicationCategory: 'BusinessApplication',
-              operatingSystem: 'Web',
-              url: SITE_URL,
-              offers: [
-                {
-                  '@type': 'Offer',
-                  name: 'Free',
-                  price: '0',
-                  priceCurrency: 'USD',
-                  description: '5 theological analyses included',
+            __html: JSON.stringify([
+              {
+                '@context': 'https://schema.org',
+                '@type': 'SoftwareApplication',
+                name: 'TheoGuard',
+                description:
+                  'AI-powered theological discernment platform for pastors and church leaders. Three tools: Theological Content Analysis, Worship Song Analysis, and Speaker & Conference Vetting.',
+                applicationCategory: 'BusinessApplication',
+                operatingSystem: 'Web',
+                url: SITE_URL,
+                offers: [
+                  {
+                    '@type': 'Offer',
+                    name: 'Free',
+                    price: '0',
+                    priceCurrency: 'USD',
+                    description: '4 analyses included — Theological Content Analysis and Worship Song Analysis',
+                  },
+                  {
+                    '@type': 'Offer',
+                    name: 'Monthly',
+                    price: '9',
+                    priceCurrency: 'USD',
+                    billingPeriod: 'P1M',
+                    description: 'Unlimited analyses per month — all three tools including Speaker Vetting',
+                  },
+                  {
+                    '@type': 'Offer',
+                    name: 'Annual',
+                    price: '79',
+                    priceCurrency: 'USD',
+                    billingPeriod: 'P1Y',
+                    description: 'Unlimited analyses per year — all three tools, save 27%',
+                  },
+                  {
+                    '@type': 'Offer',
+                    name: 'Lifetime',
+                    price: '179',
+                    priceCurrency: 'USD',
+                    description: 'Unlimited analyses forever — all three tools, all future features',
+                  },
+                ],
+                audience: {
+                  '@type': 'Audience',
+                  audienceType: 'Pastors, Church Leaders, and Ministry Directors',
                 },
-                {
-                  '@type': 'Offer',
-                  name: 'Monthly',
-                  price: '9',
-                  priceCurrency: 'USD',
-                  billingPeriod: 'P1M',
-                  description: 'Unlimited analyses per month',
-                },
-                {
-                  '@type': 'Offer',
-                  name: 'Lifetime',
-                  price: '179',
-                  priceCurrency: 'USD',
-                  description: 'Unlimited analyses, one-time payment',
-                },
-              ],
-              audience: {
-                '@type': 'Audience',
-                audienceType: 'Pastors and Church Leaders',
+                featureList: [
+                  'Theological Content Analysis (PDF, DOCX, YouTube, books, text)',
+                  'Worship Song Analysis (lyrics, song search, YouTube)',
+                  'Speaker & Conference Vetting (name, bio, sermon links)',
+                  'Doctrinal Soundness Scoring',
+                  'Psychological Framework Detection',
+                  'Worldly Philosophy Analysis',
+                  'Critical Alert System (CRITICAL, HIGH, MEDIUM, LOW)',
+                  'Confessional Alignment Settings',
+                  'Analysis History',
+                ],
               },
-            }),
+              {
+                '@context': 'https://schema.org',
+                '@type': 'Organization',
+                name: 'TheoGuard',
+                url: SITE_URL,
+                logo: `${SITE_URL}/favicon.ico`,
+                contactPoint: {
+                  '@type': 'ContactPoint',
+                  email: 'hello@theoguard.com',
+                  contactType: 'customer support',
+                },
+                sameAs: [],
+              },
+              {
+                '@context': 'https://schema.org',
+                '@type': 'WebSite',
+                name: 'TheoGuard',
+                url: SITE_URL,
+              },
+            ]),
           }}
         />
       </head>

@@ -1,0 +1,84 @@
+# TheoGuard — Full Reference
+
+## What TheoGuard Is
+TheoGuard is an AI-powered theological discernment platform designed for pastors, church leaders, elders, worship directors, and ministry directors. It analyzes content across multiple formats and returns structured theological reports grounded in historic Christian orthodoxy (Reformed, Evangelical, and confessional traditions).
+
+The platform was built to address a real problem: false teaching, psychological frameworks, and worldly philosophies increasingly enter churches through books, sermons, worship music, and invited speakers — often dressed in Christian language. TheoGuard makes systematic theological review fast and accessible.
+
+## Three Tools
+
+### 1. Theological Content Analysis
+Accepts: PDF documents, Word (DOCX) documents, YouTube sermon links (auto-transcribed), book titles (analyzed from model knowledge), plain text paste.
+
+Produces a report covering:
+- Doctrinal Soundness Score (1–5 scale, calibrated across Trinitarian orthodoxy, Christology, soteriology, bibliology, ecclesiology)
+- Psychological Framework Detection: IFS (Internal Family Systems), enneagram, Jungian archetypes, centering prayer, therapeutic gospel language — with confidence scores
+- Worldly Philosophy Analysis: Moralistic Therapeutic Deism, therapeutic self-actualization, social justice misapplication, neo-Gnostic dualism, prosperity theology — rated Subtle/Moderate/Pervasive
+- Source Reliability Assessment: each cited author rated Reliable/Caution/Problematic with explanation
+- Hermeneutical Methodology Review: eisegesis detection, allegory misuse, context stripping, reader-response interpretation
+- Confessional Alignment: evaluated against Reformed, Evangelical, Anglican, or user-selected denominational standards
+- Critical Alert System: CRITICAL (denial of essential doctrine), HIGH, MEDIUM, LOW — each with biblical counterpoint and recommended action
+- Pastoral Recommendations: use as-is, use with caveats, excerpts only, or avoid — with implementation guidance
+
+Available on: Free tier and all paid plans.
+
+### 2. Worship Song Analysis
+Accepts: lyrics paste, song title search (via lyrics.ovh), YouTube link.
+
+Scores six categories (each 1–10):
+- Biblical Faithfulness
+- God-centeredness
+- Doctrinal Clarity
+- Trinitarian Clarity
+- Gospel Substance
+- Congregational Singability
+
+Also produces: specific concern flags with the lyrical language that triggered them, overall recommendation, and context on theological issues present.
+
+Available on: Free tier and all paid plans.
+
+### 3. Speaker & Conference Vetting
+Accepts: speaker name, public bio, published statements, YouTube sermon link.
+
+Produces a 12-category theological profile including:
+- Trinitarian orthodoxy
+- Christology
+- Soteriology
+- Bibliology / Scripture view
+- Ecclesiology
+- Eschatology
+- Pneumatology
+- Social/cultural engagement
+- Charismatic distinctives
+- Associations and endorsements
+- Publishing and platform history
+- Any known controversies or retractions
+
+Each category includes an epistemic confidence score and a dedicated "What Cannot Be Determined" section — to prevent the tool from being used to smear rather than inform.
+
+Available on: Pro plans only (Monthly, Annual, Lifetime).
+
+## Technology Stack
+- AI Model: OpenAI GPT-4o (via Supabase Edge Functions — never called client-side)
+- Content Analysis temperature: 0.2–0.3 (factual, reproducible)
+- Speaker Vetting temperature: 0.1 (maximum fairness and consistency)
+- Frontend: Vite + React 18 + TypeScript + Tailwind CSS
+- Auth & Database: Supabase (PostgreSQL, Row Level Security)
+- Payments: Stripe
+
+## Pricing
+- Free: $0 — 4 total analyses, Theological Content Analysis + Worship Song Analysis, no credit card
+- Monthly: $9/month — unlimited analyses, all three tools, cancel anytime
+- Annual: $79/year — unlimited analyses, all three tools, 27% savings vs monthly
+- Lifetime: $179 one-time — unlimited analyses forever, all three tools, all future features included
+
+## Intended Users
+Pastors, senior pastors, elders, church leaders, worship directors, ministry directors, small group leaders, lay theologians, seminary students, denominational leaders engaged in church planting or oversight.
+
+## What TheoGuard Is NOT
+TheoGuard is not an authoritative theological verdict. It is an informational tool to assist human discernment. AI-generated theological analysis is not infallible and does not replace the judgment of trained theologians, pastors, or church leadership. Users are solely responsible for how they apply any report.
+
+## Contact
+Email: hello@theoguard.com
+Website: https://theoguard.com
+Application: https://app.theoguard.com
