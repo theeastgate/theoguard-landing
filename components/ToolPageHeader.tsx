@@ -7,7 +7,7 @@ export function ToolPageHeader() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-4 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2.5 group" aria-label="TheoGuard home">
           <div className="w-8 h-8 bg-amber-700 rounded-md flex items-center justify-center transition-transform duration-150 group-hover:scale-105">
-            <ShieldCheck weight="fill" className="w-4 h-4 text-white" />
+            <ShieldCheck weight="fill" className="w-4 h-4 text-white" aria-hidden="true" />
           </div>
           <span className="font-display font-semibold text-stone-900 text-[15px] tracking-tight">
             TheoGuard

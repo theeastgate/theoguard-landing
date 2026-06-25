@@ -159,7 +159,7 @@ export function Pricing() {
                 }`}
               >
                 {plan.cta}
-                <ArrowRight weight="bold" className="w-4 h-4" />
+                <ArrowRight weight="bold" className="w-4 h-4" aria-hidden="true" />
               </a>
 
               <ul className="space-y-3">
@@ -170,6 +170,7 @@ export function Pricing() {
                       className={`w-4 h-4 flex-shrink-0 mt-0.5 ${
                         plan.highlight ? 'text-amber-400' : 'text-green-500'
                       }`}
+                      aria-hidden="true"
                     />
                     <span className={plan.highlight ? 'text-stone-300' : 'text-stone-600'}>
                       {feature}

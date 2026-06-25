@@ -2,30 +2,14 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ShieldCheck } from '@phosphor-icons/react/dist/ssr';
 
-export const metadata: Metadata = {
-  title: 'Terms of Use',
+import { generateMetadata as buildMetadata } from '@/lib/seo';
+
+export const metadata = buildMetadata({
+  title: 'Terms of Use — TheoGuard Subscription & Usage Terms',
   description:
-    'The terms and conditions governing your use of TheoGuard, the AI-powered theological discernment platform for pastors and church leaders.',
-  alternates: {
-    canonical: 'https://theoguard.com/terms',
-  },
-  openGraph: {
-    title: 'Terms of Use | TheoGuard',
-    description:
-      'The terms and conditions governing your use of TheoGuard, the AI-powered theological discernment platform for pastors and church leaders.',
-    url: 'https://theoguard.com/terms',
-    type: 'website',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'TheoGuard Terms of Use' }],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Terms of Use | TheoGuard',
-    description:
-      'The terms and conditions governing your use of TheoGuard, the AI-powered theological discernment platform for pastors and church leaders.',
-    images: ['/og-image.png'],
-  },
-  robots: { index: true, follow: true },
-};
+    'The terms and conditions governing your use of TheoGuard, including subscription plans, billing, acceptable use, and refund policy.',
+  path: '/terms',
+});
 
 const EFFECTIVE_DATE = 'May 9, 2026';
 const CONTACT_EMAIL = 'hello@theoguard.com';

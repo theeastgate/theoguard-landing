@@ -47,9 +47,9 @@ export function EmailCapture() {
       className="py-24 lg:py-32 bg-stone-900 relative overflow-hidden"
       aria-labelledby="subscribe-heading"
     >
-      {/* Ambient glow */}
       <div
         className="absolute inset-0 pointer-events-none"
+        aria-hidden="true"
         style={{
           backgroundImage: `radial-gradient(ellipse 60% 80% at 50% 100%, rgba(180, 83, 9, 0.2) 0%, transparent 60%)`,
         }}
@@ -82,8 +82,10 @@ export function EmailCapture() {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
                 className="flex items-center justify-center gap-3 py-4 px-6 bg-green-900/30 border border-green-700/50 rounded-xl"
+                role="status"
+                aria-live="polite"
               >
-                <CheckCircle weight="fill" className="w-5 h-5 text-green-400" />
+                <CheckCircle weight="fill" className="w-5 h-5 text-green-400" aria-hidden="true" />
                 <p className="text-green-300 font-medium">
                   You're in. Check your inbox for a welcome email.
                 </p>
@@ -126,7 +128,7 @@ export function EmailCapture() {
                     ) : (
                       <>
                         Subscribe
-                        <ArrowRight weight="bold" className="w-4 h-4" />
+                        <ArrowRight weight="bold" className="w-4 h-4" aria-hidden="true" />
                       </>
                     )}
                   </button>
@@ -137,8 +139,10 @@ export function EmailCapture() {
                     initial={{ opacity: 0, y: 4 }}
                     animate={{ opacity: 1, y: 0 }}
                     className="flex items-center justify-center gap-2 mt-3 text-red-400 text-sm"
+                    role="alert"
+                    aria-live="assertive"
                   >
-                    <Warning weight="fill" className="w-4 h-4" />
+                    <Warning weight="fill" className="w-4 h-4" aria-hidden="true" />
                     {errorMsg}
                   </motion.div>
                 )}
@@ -150,7 +154,6 @@ export function EmailCapture() {
             )}
           </motion.div>
 
-          {/* Divider */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={inView ? { opacity: 1 } : {}}
@@ -165,7 +168,7 @@ export function EmailCapture() {
               className="inline-flex items-center gap-2 px-6 py-3 bg-white hover:bg-stone-100 text-stone-900 font-medium rounded-lg transition-all duration-150 active:scale-[0.97] text-[15px]"
             >
               Create your free account
-              <ArrowRight weight="bold" className="w-4 h-4" />
+              <ArrowRight weight="bold" className="w-4 h-4" aria-hidden="true" />
             </a>
           </motion.div>
         </div>

@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { generateMetadata as buildMetadata } from '@/lib/seo';
 import { ToolPageHeader } from '@/components/ToolPageHeader';
 import { Footer } from '@/components/Footer';
+import { FAQSection, generateFAQSchema, generateHowToSchema } from '@/components/FAQSection';
+import Script from 'next/script';
 import {
   Warning,
   Brain,
@@ -26,7 +28,7 @@ import {
 export const metadata: Metadata = buildMetadata({
   title: 'Theological Content Analysis',
   description:
-    'Upload a sermon, book, or YouTube video and receive an 8-dimension theological report — doctrinal scoring, psychological framework detection, worldly philosophy analysis, source reliability, and pastoral recommendations.',
+    'Upload a sermon, book, or YouTube video and receive an 8-dimension theological report — doctrinal scoring, framework detection, and pastoral recommendations.',
   path: '/content-analysis',
 });
 
@@ -79,6 +81,35 @@ const formats = [
   { icon: YoutubeLogo, label: 'YouTube', detail: 'Auto-transcribed sermon videos' },
   { icon: BookBookmark, label: 'Book title', detail: 'Analyzed from model knowledge' },
   { icon: TextT, label: 'Plain text', detail: 'Paste any content directly' },
+];
+
+const faqs = [
+  {
+    question: 'What content formats does TheoGuard accept?',
+    answer: 'TheoGuard accepts PDF files, Word documents (DOCX), YouTube URLs (auto-transcribed), book titles, and plain text. You can analyze sermons, books, study guides, conference talks, and any written theological content.',
+  },
+  {
+    question: 'How accurate is the doctrinal analysis?',
+    answer: 'TheoGuard uses GPT-4o calibrated to historic Reformed orthodoxy. The analysis is designed to assist pastoral judgment, not replace it. Each finding includes specific textual evidence so you can evaluate the reasoning independently.',
+  },
+  {
+    question: 'Is my submitted content kept confidential?',
+    answer: 'Yes. Your submitted content is transmitted to OpenAI\'s API for analysis but is not used to train AI models. Analysis reports are stored privately in your account and are never shared with other users or made publicly accessible.',
+  },
+  {
+    question: 'What does the free plan include?',
+    answer: 'The free plan includes 4 total analyses usable across Theological Content Analysis and Worship Song Analysis. No credit card is required. These analyses do not expire.',
+  },
+  {
+    question: 'Can I export my analysis reports?',
+    answer: 'Yes. All analyses are saved to your account and can be exported as CSV for elder board review or personal records. You can also delete individual reports or your entire account at any time.',
+  },
+];
+
+const howToSteps = [
+  { name: 'Submit your content', text: 'Upload a PDF, DOCX, paste a YouTube URL, type a book title, or paste text directly into TheoGuard.' },
+  { name: 'AI theological review', text: 'GPT-4o processes your content across eight dimensions of doctrinal review, calibrated to historic Christian orthodoxy. Typically completes in 60–90 seconds.' },
+  { name: 'Receive your report', text: 'Review your structured, severity-rated report with specific textual evidence, biblical counterpoints, and pastoral recommendations. Saved to your account.' },
 ];
 
 const otherTools = [
@@ -321,6 +352,9 @@ export default function ContentAnalysisPage() {
           </div>
         </section>
 
+        {/* FAQ */}
+        <FAQSection faqs={faqs} id="content-analysis-faq" />
+
         {/* Bottom CTA */}
         <section className="py-20 bg-white border-t border-stone-200">
           <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
@@ -343,6 +377,17 @@ export default function ContentAnalysisPage() {
       </main>
 
       <Footer />
+      <Script
+        id="faq-schema"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            generateFAQSchema(faqs),
+            generateHowToSchema('How to Analyze Content with TheoGuard', 'Upload any content format and receive a structured theological report in three steps.', howToSteps),
+          ]),
+        }}
+      />
     </>
   );
 }

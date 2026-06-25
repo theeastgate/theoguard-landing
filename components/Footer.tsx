@@ -27,7 +27,7 @@ export function Footer() {
           <div className="col-span-2 md:col-span-2 lg:col-span-2">
             <div className="flex items-center gap-2.5 mb-4">
               <div className="w-8 h-8 bg-amber-700 rounded-md flex items-center justify-center">
-                <ShieldCheck weight="fill" className="w-4 h-4 text-white" />
+                <ShieldCheck weight="fill" className="w-4 h-4 text-white" aria-hidden="true" />
               </div>
               <span className="font-display font-semibold text-white text-[15px]">TheoGuard</span>
             </div>

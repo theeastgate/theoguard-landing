@@ -2,30 +2,14 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ShieldCheck } from '@phosphor-icons/react/dist/ssr';
 
-export const metadata: Metadata = {
-  title: 'Privacy Policy',
+import { generateMetadata as buildMetadata } from '@/lib/seo';
+
+export const metadata = buildMetadata({
+  title: 'Privacy Policy — How TheoGuard Protects Your Data',
   description:
-    'How TheoGuard collects, uses, and protects your personal information and the content you submit for theological analysis.',
-  alternates: {
-    canonical: 'https://theoguard.com/privacy',
-  },
-  openGraph: {
-    title: 'Privacy Policy | TheoGuard',
-    description:
-      'How TheoGuard collects, uses, and protects your personal information and the content you submit for theological analysis.',
-    url: 'https://theoguard.com/privacy',
-    type: 'website',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'TheoGuard Privacy Policy' }],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Privacy Policy | TheoGuard',
-    description:
-      'How TheoGuard collects, uses, and protects your personal information and the content you submit for theological analysis.',
-    images: ['/og-image.png'],
-  },
-  robots: { index: true, follow: true },
-};
+    'How TheoGuard collects, uses, and protects your personal information and submitted content. Your data is never used to train AI models.',
+  path: '/privacy',
+});
 
 const EFFECTIVE_DATE = 'May 9, 2026';
 const CONTACT_EMAIL = 'hello@theoguard.com';

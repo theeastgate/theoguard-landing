@@ -2,7 +2,6 @@
 
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Quotes } from '@phosphor-icons/react';
 
 const testimonials = [
   {
@@ -77,20 +76,26 @@ export function Testimonials() {
           </h2>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-          className="flex flex-col items-center justify-center py-20 border border-dashed border-stone-300 rounded-2xl bg-stone-50"
-        >
-          <Quotes weight="fill" className="w-10 h-10 text-amber-200 mb-4" />
-          <p className="font-display text-2xl font-bold text-stone-400 tracking-tight mb-2">
-            Coming soon
-          </p>
-          <p className="text-sm text-stone-400 max-w-[38ch] text-center leading-relaxed">
-            Testimonials from pastors and church leaders are on their way.
-          </p>
-        </motion.div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {testimonials.map((t, i) => (
+            <motion.div
+              key={t.name}
+              initial={{ opacity: 0, y: 20 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.1 + i * 0.08, ease: [0.16, 1, 0.3, 1] }}
+              className="flex flex-col p-6 rounded-2xl border border-stone-200 bg-stone-50"
+            >
+              <blockquote className="text-stone-700 leading-relaxed text-[15px] flex-1 mb-5">
+                &ldquo;{t.quote}&rdquo;
+              </blockquote>
+              <div className="border-t border-stone-200 pt-4">
+                <p className="font-semibold text-stone-900 text-sm">{t.name}</p>
+                <p className="text-xs text-stone-500 mt-0.5">{t.title}</p>
+                <p className="text-xs text-stone-400">{t.church}</p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );

@@ -62,7 +62,7 @@ export function HowItWorks() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16 relative">
           {/* Connector lines (desktop) */}
-          <div className="hidden md:block absolute top-8 left-[33%] right-[33%] h-px bg-stone-200" />
+          <div className="hidden md:block absolute top-8 left-[33%] right-[33%] h-px bg-stone-200" aria-hidden="true" />
           <div className="hidden md:block absolute top-8 left-[33%] w-[33%] h-px bg-stone-200" />
 
           {steps.map((step, i) => {
@@ -82,7 +82,7 @@ export function HowItWorks() {
                 <div className="flex items-center gap-4 mb-6">
                   <div className="relative">
                     <div className="w-16 h-16 rounded-2xl bg-amber-700 flex items-center justify-center flex-shrink-0">
-                      <Icon weight="fill" className="w-7 h-7 text-white" />
+                      <Icon weight="fill" className="w-7 h-7 text-white" aria-hidden="true" />
                     </div>
                     <span className="absolute -top-1.5 -right-1.5 text-[10px] font-bold text-amber-700 bg-amber-100 border border-amber-200 rounded-full w-5 h-5 flex items-center justify-center leading-none">
                       {step.number}

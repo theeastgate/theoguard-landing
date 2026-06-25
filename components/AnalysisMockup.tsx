@@ -78,7 +78,7 @@ export function AnalysisMockup() {
   }, [stage]);
 
   return (
-    <div className="relative w-full max-w-md mx-auto">
+    <div className="relative w-full max-w-md mx-auto" aria-hidden="true" role="presentation">
       {/* Browser chrome */}
       <div className="bg-stone-800 rounded-t-xl px-4 py-3 flex items-center gap-2.5">
         <div className="w-3 h-3 rounded-full bg-red-400/70" />

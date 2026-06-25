@@ -124,11 +124,13 @@ function FeatureItem({
       transition={{ duration: 0.5, delay: index * 0.07, ease: [0.16, 1, 0.3, 1] }}
       className="border-b border-stone-200 last:border-0"
     >
-      <button
-        onClick={() => setOpen((o) => !o)}
-        className="w-full flex items-start gap-4 py-5 text-left group"
-        aria-expanded={open}
-      >
+        <button
+          onClick={() => setOpen((o) => !o)}
+          className="w-full flex items-start gap-4 py-5 text-left group"
+          aria-expanded={open}
+          aria-label={`Toggle details for ${feature.title}`}
+        >
+
         <div
           className={`w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5 transition-colors duration-200 ${
             open ? 'bg-amber-700' : 'bg-stone-100 group-hover:bg-amber-100'
@@ -139,7 +141,7 @@ function FeatureItem({
             className={`w-4.5 h-4.5 transition-colors duration-200 ${
               open ? 'text-white' : 'text-stone-500 group-hover:text-amber-700'
             }`}
-            size={18}
+            aria-hidden="true"
           />
         </div>
 
@@ -156,7 +158,7 @@ function FeatureItem({
               transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
               className="flex-shrink-0 mt-0.5"
             >
-              <CaretDown weight="bold" className="w-4 h-4 text-stone-400" />
+              <CaretDown weight="bold" className="w-4 h-4 text-stone-400" aria-hidden="true" />
             </motion.div>
           </div>
         </div>

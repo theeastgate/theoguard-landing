@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { generateMetadata as buildMetadata } from '@/lib/seo';
 import { ToolPageHeader } from '@/components/ToolPageHeader';
 import { Footer } from '@/components/Footer';
+import { FAQSection, generateFAQSchema, generateHowToSchema } from '@/components/FAQSection';
+import Script from 'next/script';
 import {
   UserFocus,
   Cross,
@@ -28,7 +30,7 @@ import {
 export const metadata: Metadata = buildMetadata({
   title: 'Speaker & Conference Vetting — Theological Profile Before the Invitation',
   description:
-    'Build a 12-category theological profile of any speaker using their name, public bio, statements, or a YouTube sermon link. With epistemic confidence scoring and an explicit "What Cannot Be Determined" section. Pro tier.',
+    'Build a 12-category theological profile of any speaker using their name, bio, or a YouTube sermon link. With epistemic confidence scoring and fairness safeguards.',
   path: '/speaker-vetting',
 });
 
@@ -63,6 +65,35 @@ const inputMethods = [
     title: 'YouTube sermon link',
     body: 'Paste a link to a sermon, conference talk, or interview. TheoGuard extracts the transcript and analyzes the theological content.',
   },
+];
+
+const faqs = [
+  {
+    question: 'What does "epistemic confidence scoring" mean?',
+    answer: 'Each category in the report is rated by how clearly the available evidence supports the conclusion. A category with one ambiguous quote receives a lower confidence rating than one with a documented published position. This prevents overconfident conclusions from sparse data.',
+  },
+  {
+    question: 'What is the "What Cannot Be Determined" section?',
+    answer: 'Every speaker vetting report includes a dedicated section that explicitly states what cannot be determined from the available public record. This ensures the tool informs pastoral decisions without presenting incomplete data as a full verdict.',
+  },
+  {
+    question: 'Can Speaker Vetting be used to evaluate authors too?',
+    answer: 'Yes. You can submit an author\'s name, published bio, book excerpts, or links to their sermons and interviews. The same 12-category theological profile is generated, making it useful for evaluating authors before recommending their books.',
+  },
+  {
+    question: 'Why does Speaker Vetting run at "Temperature 0.1"?',
+    answer: 'Speaker Vetting uses the lowest AI temperature setting to minimize speculation and maximize consistency. If you submit the same speaker twice, you will get the same report. This is important for fairness and reproducibility.',
+  },
+  {
+    question: 'Is Speaker Vetting included on the free plan?',
+    answer: 'No. Speaker Vetting is available on paid plans (Monthly, Annual, or Lifetime). Your 4 free analyses on the free plan can be used for Theological Content Analysis and Worship Song Analysis.',
+  },
+];
+
+const howToSteps = [
+  { name: 'Submit speaker information', text: 'Enter the speaker\'s name, paste a bio or public statements, or submit a YouTube sermon link.' },
+  { name: 'AI theological profiling', text: 'TheoGuard builds a 12-category theological profile with epistemic confidence scores, running at minimum temperature for consistency.' },
+  { name: 'Review your report', text: 'Receive the full profile with specific evidence, confidence ratings, a "What Cannot Be Determined" section, and pastoral recommendations.' },
 ];
 
 const otherTools = [
@@ -342,6 +373,9 @@ export default function SpeakerVettingPage() {
           </div>
         </section>
 
+        {/* FAQ */}
+        <FAQSection faqs={faqs} id="speaker-vetting-faq" />
+
         {/* Bottom CTA */}
         <section className="py-20 bg-stone-50 border-t border-stone-200">
           <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
@@ -372,6 +406,17 @@ export default function SpeakerVettingPage() {
       </main>
 
       <Footer />
+      <Script
+        id="faq-schema"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            generateFAQSchema(faqs),
+            generateHowToSchema('How to Vet a Speaker with TheoGuard', 'Build a theological profile of any speaker in three steps.', howToSteps),
+          ]),
+        }}
+      />
     </>
   );
 }

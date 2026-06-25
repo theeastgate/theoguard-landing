@@ -21,6 +21,15 @@ export function Nav() {
     return () => window.removeEventListener('scroll', handler);
   }, []);
 
+  useEffect(() => {
+    if (mobileOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => { document.body.style.overflow = ''; };
+  }, [mobileOpen]);
+
   return (
     <>
       <header
@@ -32,17 +41,15 @@ export function Nav() {
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            {/* Logo */}
             <a href="/" className="flex items-center gap-2.5 group" aria-label="TheoGuard home">
               <div className="w-8 h-8 bg-amber-700 rounded-md flex items-center justify-center transition-transform duration-150 group-hover:scale-105 active:scale-95">
-                <ShieldCheck weight="fill" className="w-4 h-4 text-white" />
+                <ShieldCheck weight="fill" className="w-4 h-4 text-white" aria-hidden="true" />
               </div>
               <span className="font-display font-semibold text-stone-900 text-[15px] tracking-tight">
                 TheoGuard
               </span>
             </a>
 
-            {/* Desktop nav */}
             <nav className="hidden md:flex items-center gap-1" aria-label="Primary">
               {links.map((link) => (
                 <a
@@ -55,7 +62,6 @@ export function Nav() {
               ))}
             </nav>
 
-            {/* CTA + mobile toggle */}
             <div className="flex items-center gap-3">
               <a
                 href="https://app.theoguard.com"
@@ -67,15 +73,16 @@ export function Nav() {
                 onClick={() => setMobileOpen(true)}
                 className="md:hidden p-2 text-stone-600 hover:text-stone-900 hover:bg-stone-100 rounded-md transition-colors"
                 aria-label="Open menu"
+                aria-expanded={mobileOpen}
+                aria-controls="mobile-menu"
               >
-                <List weight="bold" className="w-5 h-5" />
+                <List weight="bold" className="w-5 h-5" aria-hidden="true" />
               </button>
             </div>
           </div>
         </div>
       </header>
 
-      {/* Mobile menu */}
       <AnimatePresence>
         {mobileOpen && (
           <>
@@ -86,18 +93,23 @@ export function Nav() {
               transition={{ duration: 0.2 }}
               className="fixed inset-0 z-50 bg-black/30 backdrop-blur-sm"
               onClick={() => setMobileOpen(false)}
+              aria-hidden="true"
             />
             <motion.div
+              id="mobile-menu"
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', duration: 0.4, bounce: 0.1 }}
               className="fixed top-0 right-0 bottom-0 z-50 w-72 bg-stone-50 shadow-2xl flex flex-col"
+              role="dialog"
+              aria-modal="true"
+              aria-label="Mobile navigation"
             >
               <div className="flex items-center justify-between p-5 border-b border-stone-200">
                 <div className="flex items-center gap-2.5">
                   <div className="w-7 h-7 bg-amber-700 rounded flex items-center justify-center">
-                    <ShieldCheck weight="fill" className="w-4 h-4 text-white" />
+                    <ShieldCheck weight="fill" className="w-4 h-4 text-white" aria-hidden="true" />
                   </div>
                   <span className="font-display font-semibold text-stone-900 text-sm">TheoGuard</span>
                 </div>
@@ -106,11 +118,11 @@ export function Nav() {
                   className="p-1.5 text-stone-500 hover:text-stone-900 hover:bg-stone-100 rounded-md transition-colors"
                   aria-label="Close menu"
                 >
-                  <X weight="bold" className="w-5 h-5" />
+                  <X weight="bold" className="w-5 h-5" aria-hidden="true" />
                 </button>
               </div>
 
-              <nav className="flex flex-col p-4 gap-1 flex-1">
+              <nav className="flex flex-col p-4 gap-1 flex-1" aria-label="Mobile">
                 {links.map((link) => (
                   <a
                     key={link.href}

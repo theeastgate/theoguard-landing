@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { generateMetadata as buildMetadata } from '@/lib/seo';
 import { ToolPageHeader } from '@/components/ToolPageHeader';
 import { Footer } from '@/components/Footer';
+import { FAQSection, generateFAQSchema, generateHowToSchema } from '@/components/FAQSection';
+import Script from 'next/script';
 import {
   MusicNote,
   BookOpen,
@@ -24,7 +26,7 @@ import {
 export const metadata: Metadata = buildMetadata({
   title: 'Worship Song Analysis — Theological Scoring for Your Worship Set',
   description:
-    'Score any worship song across six theological categories — Biblical Faithfulness, God-centeredness, Doctrinal Clarity, Trinitarian Clarity, Gospel Substance, and Congregational Singability. Paste lyrics, search by title, or submit a YouTube link.',
+    'Score any worship song across six theological categories — Biblical Faithfulness, God-centeredness, Doctrinal Clarity, and Gospel Substance. Paste lyrics or search by title.',
   path: '/worship-song-analysis',
 });
 
@@ -77,6 +79,35 @@ const inputMethods = [
     title: 'Submit a YouTube link',
     body: 'Paste a YouTube URL for a live worship recording or official lyric video. The transcript is extracted and analyzed.',
   },
+];
+
+const faqs = [
+  {
+    question: 'How does TheoGuard score worship songs?',
+    answer: 'Each song is scored 1–10 across six theological categories: Biblical Faithfulness, God-centeredness, Doctrinal Clarity, Trinitarian Clarity, Gospel Substance, and Congregational Singability. Specific lyrical language that triggered any concern is quoted directly in the report.',
+  },
+  {
+    question: 'Can I analyze any worship song?',
+    answer: 'Yes. You can paste lyrics directly, search by song title and artist, or submit a YouTube link. TheoGuard works with contemporary worship hymns, choruses, and traditional hymns alike.',
+  },
+  {
+    question: 'Is Worship Song Analysis available on the free plan?',
+    answer: 'Yes. Worship Song Analysis is included in the free tier. Your 4 free analyses can be used across both Theological Content Analysis and Worship Song Analysis.',
+  },
+  {
+    question: 'What if a song scores well overall but has one concerning lyric?',
+    answer: 'The report flags specific concerns at the lyric level, even when the overall score is positive. This helps you make informed decisions — whether to use the song as-is, with a note to your congregation, or to select an alternative.',
+  },
+  {
+    question: 'Does TheoGuard account for different theological traditions?',
+    answer: 'The scoring is grounded in historic Christian orthodoxy. You can configure confessional alignment settings to evaluate songs against Reformed, Evangelical, or Anglican standards, surfacing tradition-specific concerns.',
+  },
+];
+
+const howToSteps = [
+  { name: 'Submit your song', text: 'Paste lyrics, search by song title and artist, or submit a YouTube link to a worship recording.' },
+  { name: 'Theological scoring', text: 'TheoGuard analyzes the song across six theological categories, identifying specific lyrical concerns and strengths.' },
+  { name: 'Review your report', text: 'Receive category scores, specific concern flags with exact lyrics, and an overall recommendation for congregational use.' },
 ];
 
 const otherTools = [
@@ -327,6 +358,9 @@ export default function WorshipSongAnalysisPage() {
           </div>
         </section>
 
+        {/* FAQ */}
+        <FAQSection faqs={faqs} id="worship-song-faq" />
+
         {/* Bottom CTA */}
         <section className="py-20 bg-stone-50 border-t border-stone-200">
           <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
@@ -348,6 +382,17 @@ export default function WorshipSongAnalysisPage() {
       </main>
 
       <Footer />
+      <Script
+        id="faq-schema"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            generateFAQSchema(faqs),
+            generateHowToSchema('How to Analyze a Worship Song with TheoGuard', 'Score any worship song theologically in three steps.', howToSteps),
+          ]),
+        }}
+      />
     </>
   );
 }

@@ -20,17 +20,17 @@ export function Hero() {
       className="relative min-h-[100dvh] flex items-center overflow-hidden bg-stone-50"
       aria-labelledby="hero-heading"
     >
-      {/* Background texture */}
       <div
         className="absolute inset-0 pointer-events-none"
+        aria-hidden="true"
         style={{
           backgroundImage: `radial-gradient(ellipse 80% 60% at 60% 50%, rgba(180, 83, 9, 0.06) 0%, transparent 70%)`,
         }}
       />
 
-      {/* Faint grid */}
       <div
         className="absolute inset-0 pointer-events-none opacity-30"
+        aria-hidden="true"
         style={{
           backgroundImage: `linear-gradient(rgba(87, 83, 78, 0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(87, 83, 78, 0.06) 1px, transparent 1px)`,
           backgroundSize: '64px 64px',
@@ -48,7 +48,7 @@ export function Hero() {
           >
             <motion.div variants={itemVariants} className="mb-6">
               <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-100 border border-amber-200 text-amber-800 text-xs font-medium">
-                <ShieldCheck weight="fill" className="w-3.5 h-3.5" />
+                <ShieldCheck weight="fill" className="w-3.5 h-3.5" aria-hidden="true" />
                 Trusted by pastors worldwide
               </span>
             </motion.div>
@@ -78,7 +78,7 @@ export function Hero() {
                 className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-amber-700 hover:bg-amber-800 text-white font-medium rounded-lg transition-all duration-150 active:scale-[0.97] text-[15px]"
               >
                 Start free — 4 analyses
-                <ArrowRight weight="bold" className="w-4 h-4" />
+                <ArrowRight weight="bold" className="w-4 h-4" aria-hidden="true" />
               </a>
               <a
                 href="#how-it-works"
@@ -91,15 +91,15 @@ export function Hero() {
             {/* Trust signals */}
             <motion.div variants={itemVariants} className="flex items-center gap-6 text-sm text-stone-500">
               <div className="flex items-center gap-1.5">
-                <ShieldCheck weight="fill" className="w-4 h-4 text-green-500" />
+                <ShieldCheck weight="fill" className="w-4 h-4 text-green-500" aria-hidden="true" />
                 <span>No credit card</span>
               </div>
               <div className="flex items-center gap-1.5">
-                <ShieldCheck weight="fill" className="w-4 h-4 text-green-500" />
+                <ShieldCheck weight="fill" className="w-4 h-4 text-green-500" aria-hidden="true" />
                 <span>4 free analyses</span>
               </div>
               <div className="flex items-center gap-1.5">
-                <ShieldCheck weight="fill" className="w-4 h-4 text-green-500" />
+                <ShieldCheck weight="fill" className="w-4 h-4 text-green-500" aria-hidden="true" />
                 <span>Results in minutes</span>
               </div>
             </motion.div>
@@ -113,7 +113,7 @@ export function Hero() {
             className="relative"
           >
             {/* Decorative blur behind mockup */}
-            <div className="absolute -inset-8 bg-amber-500/10 rounded-3xl blur-3xl pointer-events-none" />
+            <div className="absolute -inset-8 bg-amber-500/10 rounded-3xl blur-3xl pointer-events-none" aria-hidden="true" />
             <div className="relative">
               <AnalysisMockup />
             </div>
