@@ -2,29 +2,33 @@ import { MetadataRoute } from 'next';
 
 const SITE_URL = 'https://theoguard.com';
 
+// Bump when page content meaningfully changes so lastModified stays stable
+// across builds (previously used `new Date()`, which churned every build).
+const CONTENT_UPDATED = new Date('2026-06-25');
+
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: SITE_URL,
-      lastModified: new Date(),
+      lastModified: CONTENT_UPDATED,
       changeFrequency: 'weekly',
       priority: 1.0,
     },
     {
       url: `${SITE_URL}/content-analysis`,
-      lastModified: new Date(),
+      lastModified: CONTENT_UPDATED,
       changeFrequency: 'monthly',
       priority: 0.9,
     },
     {
       url: `${SITE_URL}/worship-song-analysis`,
-      lastModified: new Date(),
+      lastModified: CONTENT_UPDATED,
       changeFrequency: 'monthly',
       priority: 0.9,
     },
     {
       url: `${SITE_URL}/speaker-vetting`,
-      lastModified: new Date(),
+      lastModified: CONTENT_UPDATED,
       changeFrequency: 'monthly',
       priority: 0.9,
     },
